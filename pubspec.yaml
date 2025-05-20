@@ -5,14 +5,15 @@ description: >
   like regions, TTL, client IP, and per-call parameters.
 version: 0.1.5
 homepage: https://turnix.io
-
+repository: https://github.com/turnixio/turnix_dart
+issue_tracker: https://github.com/turnixio/turnix_dart/issues
 
 environment:
   sdk: ^3.7.2
 
 # Add regular dependencies here.
 dependencies:
-  # path: ^1.8.0
+  http: ^1.4.0
 
 dev_dependencies:
   lints: ^5.0.0
