@@ -1,0 +1,19 @@
+name: turnix_dart
+description: >
+  A Dart SDK for fetching WebRTC ICE (STUN/TURN) credentials
+  from the Turnix.io API, with support for advanced options
+  like regions, TTL, client IP, and per-call parameters.
+version: 0.1.5
+homepage: https://turnix.io
+
+
+environment:
+  sdk: ^3.7.2
+
+# Add regular dependencies here.
+dependencies:
+  # path: ^1.8.0
+
+dev_dependencies:
+  lints: ^5.0.0
+  test: ^1.24.0
