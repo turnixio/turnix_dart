@@ -1,7 +1,9 @@
+import 'dart:convert';
+
 import 'package:turnix_dart/turnix_dart.dart';
 
 void main() async {
-  const apiToken = 'your-api-token-here'; // <- get on turnix.io
+  const apiToken = 'REPLACE_WITH_YOUR_TOKEN'; // <- get on turnix.io
 
   try {
     final creds = await TurnixIO.getIceCredentials(
@@ -21,6 +23,14 @@ void main() async {
       }
     }
     print('Expires at: ${creds.expiresAt.toIso8601String()}');
+
+    List<Region> regions = await TurnixIO.getAvailableRegions(
+      apiToken: apiToken,
+    );
+
+    print(
+      'Available regions: ${jsonEncode(regions.map((region) => region.toString()).join(","))}',
+    );
   } catch (e) {
     print('Error fetching ICE credentials: $e');
   }
