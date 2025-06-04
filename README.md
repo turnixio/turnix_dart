@@ -7,8 +7,13 @@ A Dart SDK for fetching WebRTC ICE (STUN/TURN) credentials from the Turnix.io AP
 support for advanced options like regions, TTL, client IP, and per-call parameters.
 
 ---
+## ⚙️ Prerequisites
 
-## Features
+- ✅ A **free account** at [https://turnix.io](https://turnix.io)
+- 🔐 A **Bearer API token** from the TURNIX dashboard
+---
+
+## ✨ Features
 
 * Fetch STUN/TURN credentials in a single call with built-in endpoint.
 * Support for optional parameters: `initiatorClient`, `receiverClient`, `room`, `ttl`, `fixedRegion`, `preferredRegion`, `clientIp`.
@@ -17,7 +22,7 @@ support for advanced options like regions, TTL, client IP, and per-call paramete
 * Pure-Dart implementation: works in server-side Dart environments and anywhere `dart:io` is available.
 * **Retrieve Available Regions**: list supported TURN regions (`slug`, `city`, `name`, status flags) via `TurnixIO.getAvailableRegions`.
 
-## Getting Started
+## 🚀 Getting Started
 
 ### Installation
 
@@ -49,7 +54,6 @@ final creds = await TurnixIO.getIceCredentials(
   apiToken: 'YOUR_API_TOKEN',
   room: 'chat-room-42',
   ttl: 600,
-  preferredRegion: 'us-west-2',
   clientIp: '203.0.113.5',
 );
 
@@ -87,7 +91,7 @@ print(
 );
 ```
 
-## Advanced Options
+## 🧪 Advanced Options
 
 All parameters are optional. Pass only those you need:
 
@@ -101,7 +105,7 @@ All parameters are optional. Pass only those you need:
 | `preferredRegion` | `String` | **Preferred region**: hints allocation in a region (e.g., `eu-central-1`); if unavailable, the server will fall back to another region.                                                               |
 | `clientIp`        | `String` | Client IP for geofencing, sent as `X-TURN-CLIENT-IP` header. Defaults to the requester's IP address if unset, used to determine region when neither `fixedRegion` nor `preferredRegion` is specified. |
 
-## Handling Expiration
+## ⏳ Handling Expiration
 
 The `IceCredentials` object exposes:
 
@@ -118,16 +122,16 @@ if (timeLeft < Duration(seconds: 30)) {
 }
 ```
 
-## Example App
+## 📱 Example App
 
 See the `example/` directory for a demo script showing usage and credential parsing.
 
-## Contributing
+## ❤️ Contributing
 
 Contributions and issues are welcome! Please open a PR or issue
 on [GitHub](https://github.com/turnixio/turnix_dart).
 
-## License
+## 📄 License
 
 This package is released under the MIT License. See [LICENSE](LICENSE) for details.
 
